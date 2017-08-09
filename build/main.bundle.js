@@ -42,7 +42,7 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -65,17 +65,14 @@
 	
 	    document.getElementById("monthlyPayment").innerHTML = monthlyPayment.toFixed(2);
 	    document.getElementById("monthlyRate").innerHTML = (monthlyRate * 100).toFixed(2);
-	
-	    var html = "";
-	    amortization.forEach(function (year, index) {
-	        return html += '\n    <tr>\n        <td>' + (index + 1) + '</td>\n        <td class="currency">' + Math.round(year.principalY) + '</td> \n        <td class="stretch">\n            <div class="flex">\n                <div class="bar principal" \n                     style="flex:' + year.principalY + ';-webkit-flex:' + year.principalY + '">\n                </div>\n                <div class="bar interest" \n                     style="flex:' + year.interestY + ';-webkit-flex:' + year.interestY + '">\n                </div>\n            </div>\n        </td>\n        <td class="currency left">' + Math.round(year.interestY) + '</td> \n        <td class="currency">' + Math.round(year.balance) + '</td>\n    </tr>\n    ';
+	    amortization.forEach(function (month) {
+	        return console.log(month);
 	    });
-	    document.getElementById("amortization").innerHTML = html;
 	});
 
-/***/ },
+/***/ }),
 /* 1 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	"use strict";
 	
@@ -114,6 +111,6 @@
 	    return { monthlyPayment: monthlyPayment, monthlyRate: monthlyRate, amortization: amortization };
 	};
 
-/***/ }
+/***/ })
 /******/ ]);
 //# sourceMappingURL=main.bundle.js.map
